@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Cafe</title>
+    <link rel="stylesheet" href="coffeecafe.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo"><span>C</span>offee Cafe</h1>
+        <button class="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tagline">Welcome to Coffee Cafe</p>
+            <h2>Make your day great with our <br>special cup of coffee!</h2>
+            <p class="hero-desc">Your perfect cup of coffee awaits here at our coffee cafe in the heart of the city of Swat. Experience the perfect blend of aroma, flavor, and caffeine that will make your day great.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-outline">Contact Us</button>
+                <button class="btn btn-filled">Order Now</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="coffeeCup.png" alt="Coffee cup">
+        </div>
+    </section>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.hamburger').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
